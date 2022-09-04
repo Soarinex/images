@@ -5,11 +5,11 @@
 # ----------------------------------
 FROM        frolvlad/alpine-mono
 
-LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
+LABEL       author="Nash" maintainer="nash@nashua.dev"
 
 RUN         echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
             && apk add --update --no-cache openssl curl sqlite libgdiplus git \
-            && git clone  \
+            && apk add bash icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib \
             && adduser -D -h /home/container container
 
 USER        container
